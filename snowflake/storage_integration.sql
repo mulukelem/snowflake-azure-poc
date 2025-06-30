@@ -1,0 +1,12 @@
+USE ROLE ACCOUNTADMIN;
+
+CREATE OR REPLACE STORAGE INTEGRATION azure_int
+  TYPE = EXTERNAL_STAGE
+  STORAGE_PROVIDER = AZURE
+  ENABLED = TRUE
+  AZURE_TENANT_ID = '2277af98-3e4f-47b8-95cc-c93e9b1c7f90'
+  STORAGE_ALLOWED_LOCATIONS = (
+    'azure://solteststorage.blob.core.windows.net/soltestcontainer/'
+  );
+
+DESC INTEGRATION azure_int;
